@@ -1,0 +1,24 @@
+#Triangular Fuzzification
+import matplotlib.pyplot as plt
+x=int(input(" Enter Value of X : "))
+a=int(input(" Enter Value of a : "))
+b=int(input(" Enter Value of b : "))
+c=int(input(" Enter Value of c : "))
+if a<=b and b<=c :
+    if x<=a:
+        print(0)
+    if a<x and x<=b:
+        print((x-a)/(b-a))
+    if b<x and x<c:
+        print((c-x)/(c-b))
+    if x>c:
+        print(0)
+else:
+    print("Enter Valid Inputs")
+x_values = [a, b, c]
+y_values = [0, 1, 0]  
+plt.plot(x_values, y_values,color="b", marker='o')
+plt.xlabel("X")
+plt.ylabel("Membership Degree")
+plt.title("Triangular Fuzzification")
+plt.show()     
